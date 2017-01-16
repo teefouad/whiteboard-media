@@ -1,0 +1,22 @@
+// ===========================================================================
+// BREAKPOINTS
+// ===========================================================================
+
+// variables
+$wb-breakpoints: () !default;
+
+// functions
+@function wb-add-breakpoint($name, $value) {
+  @return map-merge($wb-breakpoints, (#{$name}: $value));
+}
+
+@function wb-remove-breakpoint($name) {
+  @return map-remove($wb-breakpoints, $name);
+}
+
+// breakpoints
+$wb-breakpoints: wb-add-breakpoint(xs, null);
+$wb-breakpoints: wb-add-breakpoint(sm, 544px);
+$wb-breakpoints: wb-add-breakpoint(md, 768px);
+$wb-breakpoints: wb-add-breakpoint(lg, 992px);
+$wb-breakpoints: wb-add-breakpoint(xl, 1200px);
